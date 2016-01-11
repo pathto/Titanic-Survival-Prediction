@@ -10,7 +10,7 @@ output:
 This file describes how I solve Kaggle's [Titanic: Machine Learning from Disaster](https://www.kaggle.com/c/titanic) competition. 
 
 ### Prepare the environment
-```{r}
+```{r, message = FALSE, warning = FALSE}
 library(knitr)
 opts_chunk$set('results' = 'hold', 'message' = FALSE, 'warning' = FALSE)
 library(plyr)
@@ -52,7 +52,6 @@ First, let's see how the variables affect the survive rate.
 #mosaicplot(Sex ~ Survived, data = df.train1, main = 'Survival Rate by Gender', color = TRUE)
 #mosaicplot(Embarked ~ Survived, data = df.train1, main = 'Survival Rate by Ports', color = TRUE)
 #barplot(table(df.train1$Embarked))
-opts_chunk$get('results')
 p <- ggplot(df.train1)
 p + geom_bar(aes(Pclass, fill = Survived))
 p + geom_bar(aes(Sex, fill = Survived))

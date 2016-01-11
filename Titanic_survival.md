@@ -7,64 +7,11 @@ This file describes how I solve Kaggle's [Titanic: Machine Learning from Disaste
 
 ```r
 library(knitr)
-```
-
-```
-## Warning: package 'knitr' was built under R version 3.1.3
-```
-
-```r
 opts_chunk$set('results' = 'hold', 'message' = FALSE, 'warning' = FALSE)
 library(plyr)
-```
-
-```
-## Warning: package 'plyr' was built under R version 3.1.3
-```
-
-```r
 library(ggplot2)
-```
-
-```
-## Warning: package 'ggplot2' was built under R version 3.1.3
-```
-
-```r
 library(Amelia)
-```
-
-```
-## Warning: package 'Amelia' was built under R version 3.1.3
-```
-
-```
-## Loading required package: Rcpp
-```
-
-```
-## Warning: package 'Rcpp' was built under R version 3.1.3
-```
-
-```
-## ## 
-## ## Amelia II: Multiple Imputation
-## ## (Version 1.7.4, built: 2015-12-05)
-## ## Copyright (C) 2005-2016 James Honaker, Gary King and Matthew Blackwell
-## ## Refer to http://gking.harvard.edu/amelia/ for more information
-## ##
-```
-
-```r
 library(caret)
-```
-
-```
-## Warning: package 'caret' was built under R version 3.1.3
-```
-
-```
-## Loading required package: lattice
 ```
 
 ## Data exploring and pre-processing
@@ -102,7 +49,6 @@ First, let's see how the variables affect the survive rate.
 #mosaicplot(Sex ~ Survived, data = df.train1, main = 'Survival Rate by Gender', color = TRUE)
 #mosaicplot(Embarked ~ Survived, data = df.train1, main = 'Survival Rate by Ports', color = TRUE)
 #barplot(table(df.train1$Embarked))
-opts_chunk$get('results')
 p <- ggplot(df.train1)
 p + geom_bar(aes(Pclass, fill = Survived))
 ```
@@ -132,10 +78,6 @@ p + geom_histogram(aes(Fare, fill = Survived), binwidth = 20)
 ```
 
 ![](Titanic_survival_files/figure-html/unnamed-chunk-3-5.png) 
-
-```
-## [1] "hold"
-```
 
 From these figures, we have the following observations:
 
